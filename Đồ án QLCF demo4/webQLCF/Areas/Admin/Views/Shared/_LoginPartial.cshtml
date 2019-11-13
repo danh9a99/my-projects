@@ -1,0 +1,21 @@
+﻿
+@{
+    var session = (UserLogin)Session[webQLCF.Common.CommonConstants.USER_SESSION];
+}
+@if (session == null)
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.Link" target="@item.Target">@item.Text</a></li>
+        }
+
+    </ul>
+}
+else
+{
+    <ul>
+        <li>Xin chào:@session.UserName</li>
+        <li>@Html.ActionLink("Thoát", "Logout", "Login")</li>
+    </ul>
+}

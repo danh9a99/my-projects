@@ -1,0 +1,5 @@
+D:\Web\Đồ án QLCF demo4\Common\bin\Debug\Common.dll
+D:\Web\Đồ án QLCF demo4\Common\bin\Debug\Common.pdb
+D:\Web\Đồ án QLCF demo4\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Web\Đồ án QLCF demo4\Common\obj\Debug\Common.dll
+D:\Web\Đồ án QLCF demo4\Common\obj\Debug\Common.pdb

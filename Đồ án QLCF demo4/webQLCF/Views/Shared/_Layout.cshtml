@@ -1,0 +1,572 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Mộc Coffee (beta)</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="" />
+    <style>
+        .dropbtn {
+            background-color: mistyrose;
+            color: black;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 5px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: gray;
+        }
+    </style>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--// Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link href="~/Assets/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+    <!-- css slider -->
+    <link rel="stylesheet" href="~/Assets/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link href="~/Assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <link href="~/Assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- //Custom-Files -->
+    <!-- Web-Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="~/Assets/css/login_overlay.css" rel='stylesheet' type='text/css' />
+    <link href="~/Assets/css/style6.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Assets/css/shop.css" type="text/css" />
+    <link rel="stylesheet" href="~/Assets/css/owl.carousel.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Assets/css/owl.theme.css" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/jquery-ui1.css">
+    <link href="~/Assets/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/Assets/css/fontawesome-all.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+          rel="stylesheet">
+    <!-- //Web-Fonts -->
+</head>
+
+<body>
+    <!-- header -->
+    <!-- top-bar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <ul class="navbar-nav ml-auto">
+            @{ Html.RenderAction("HeaderCart","Home");}
+
+        </ul>
+
+    </nav>
+
+    <!-- //top-bar -->
+    <!-- header 2 -->
+    <!-- navigation -->
+    <div class="main-top py-1">
+        <div class="container">
+            <div class="nav-content">
+                <!-- logo -->
+                <h1>
+                    <a id="logo" class="logo" href="/Home">
+                        <img src="~/Assets/images/logo_n.png" alt="" class="img-fluid" style="height: 100px; width: 100px;">
+                        <span>Mộc</span> Coffee
+                    </a>
+                </h1>
+                <div class="search-hotel">
+                    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+                    {
+                        <input class="form-control" type="search" name="SearchString" placeholder="Search here..." required="">
+                        <button class="btn1">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="clearfix"> </div>
+                    }
+                </div>
+
+                <!-- //logo -->
+                <!-- nav -->
+                <div class="nav_web-dealingsls">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li><a href="/san-pham">Sản phẩm</a></li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-3" class="toggle toogle-2">
+                                    Pages <span class="fa fa-angle-down"
+                                                aria-hidden="true"></span>
+                                </label>
+                                <a href="#pages">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-3" />
+                                <ul>
+                                    <li><a class="drop-text" href="#services">Dịch vụ</a></li>
+                                    <li><a class="drop-text" href="#blog">Đội ngũ</a></li>
+                                    <li><a class="drop-text" href="#specials">Khuyến mãi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#footer">Thông tin liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //nav -->
+            </div>
+        </div>
+    </div>
+    <!-- //navigation -->
+    <!-- //header 2 -->
+    <!-- banner -->
+
+    @RenderBody()
+    <!-- //banner -->
+    <div class="clearfix"></div>
+
+    <!-- //slides images -->
+    <!-- footer -->
+    <footer class="py-5" id="footer">
+        <div class="container py-xl-4">
+            <div class="row footer-top">
+                <div class="col-lg-4 footer-grid_section_1its footer-text">
+                    <!-- logo -->
+                    <h2>
+                        <a class="logo text-wh" href="#">
+                            <img src="~/Assets/images/logo_n.png" alt="" class="img-fluid" style="height: 100px;"> <span>Mộc</span> Coffee
+                        </a>
+                    </h2>
+                    <!-- //logo -->
+                    <p class="mt-lg-4 mt-3 mb-lg-5 mb-4">
+                        Trang web được xây dựng nhằm phục vụ cho nhu cầu
+                        học tập, không vì mục đích thương mại.
+                    </p>
+                    <!-- social icons -->
+                    <ul class="top-right-info">
+                        <li>
+                            <p>Follow As:</p>
+                        </li>
+                        <li class="facebook-w3">
+                            <a href="#facebbok">
+                                <span class="fa fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li class="twitter-w3">
+                            <a href="#twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="google-w3">
+                            <a href="#google">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
+                        </li>
+                        <li class="dribble-w3">
+                            <a href="#dribble">
+                                <span class="fa fa-dribbble"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- //social icons -->
+                </div>
+                <div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+                    <div class="footer-title">
+                        <h3>Thông tin liên hệ</h3>
+                    </div>
+                    <div class="footer-text mt-4">
+                        <p>Địa chỉ: Số 1 Võ Văn Ngân, Phường Linh Chiểu, Quận Thủ Đức, Thành phố Hồ Chí Minh</p>
+                        <p class="my-2">SĐT : +84 534894364</p>
+                        <p>Email : <a href="mailto:ngothanhdanhtqtq@Gmail.com">ngothanhdanhtqt@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 footer-grid_section_1its">
+                    <div class="footer-title">
+                        <h3>Góp ý & Đánh giá</h3>
+                    </div>
+                    <div class="info-form-right mt-4 p-0">
+                        <form action="#" method="post">
+                            <div class="row">
+                                <div class="col-lg-6 form-group mb-2 pr-lg-1">
+                                    <input type="text" class="form-control" name="Name" placeholder="Họ và tên" required="">
+                                </div>
+                                <div class="col-lg-6 form-group mb-2 pl-lg-1">
+                                    <input type="text" class="form-control" name="Phone" placeholder="Số điện thoại"
+                                           required="">
+                                </div>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="email" class="form-control" name="Email" placeholder="Email" required="">
+                            </div>
+                            <div class="form-group mb-2">
+                                <textarea name="Comment" class="form-control" placeholder="Viết bình luận"
+                                          required=""></textarea>
+                            </div>
+                            <button type="submit" class="btn submit-contact ml-auto">Xác nhận</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p>
+            Design by
+            <a href="http://fb.com/giunmoc"> HTT-NTD-LHK.</a>
+        </p>
+    </div>
+    <!-- //copyright -->
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </a>
+    <!-- //move top icon -->
+    <!-- js -->
+    <script src="~/Assets/js/jquery-2.2.3.min.js"></script>
+
+    <!-- //js -->
+    <!-- FlexSlider-JavaScript -->
+    <script defer src="~/Assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //FlexSlider-JavaScript -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- start-smooth-scrolling -->
+    <script src="~/Assets/js/move-top.js"></script>
+    <script src="~/Assets/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script>
+        function SignUp() {
+            $("#ShowModal").modal();
+            $("#message1").hide();
+            $("#message2").hide();
+        }
+        var data = $("#Registration").serialize();
+        $.ajax({
+            type: "post",
+            data: data,
+            url: "/HomePage/SaveData",
+            success: function (result) {
+
+                $("#message1").show();
+                $("#message2").hide();
+                $("#Registration")[0].reset();
+            }
+        });
+    </script>
+    @*<script src="~/Assets/js/SmoothScroll.min.js"></script>*@
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Assets/js/bootstrap.js"></script>
+    <!--demo-->
+    <script src="/Assets/js/jquery-2.2.3.min.js"></script>
+    <!-- newsletter modal -->
+    <!--search jQuery-->
+    <script src="/Assets/js/modernizr-2.6.2.min.js"></script>
+    <script src="/Assets/js/classie-search.js"></script>
+    <script src="/Assets/js/demo1-search.js"></script>
+    <!--//search jQuery-->
+    <!-- cart-js -->
+    <script src="~/Assets/js/minicart.js"></script>
+    <script>
+        googles.render();
+
+        googles.cart.on('googles_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) { }
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <script>
+        $(document).ready(function () {
+            $(".button-log a").click(function () {
+                $(".overlay-login").fadeToggle(200);
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay-close1').on('click', function () {
+            $(".overlay-login").fadeToggle(200);
+            $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+    <!-- carousel -->
+    <!-- price range (top products) -->
+    <script src="~/Assets/js/jquery-ui.js"></script>
+    <script>
+        //<![CDATA[
+        $(window).load(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 9000,
+                values: [50, 6000],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+        }); //]]>
+    </script>
+    <!-- //price range (top products) -->
+
+    <script src="~/Assets/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    900: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+
+    <!-- //end-smooth-scrolling -->
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <script src="~/Assets/js/move-top.js"></script>
+    <script src="~/Assets/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            /*
+                                    var defaults = {
+                                          containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear'
+                                     };
+                                    */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!--// end-smoth-scrolling -->
+
+    <script src="~/Assets/js/bootstrap.js"></script>
+    <!--Tạo sự kiện btn trong giỏ hàng-->
+    <script>
+        var cart = {
+            init: function () {
+                cart.regEvents();
+            },
+            regEvents: function () {
+                $('#btnContinue').off('click').on('click', function () {
+                    window.location.href = "/san-pham";
+                });
+                $('#btnPayment').off('click').on('click', function () {
+                    window.location.href = "/thanh-toan";
+                });
+                $('#btnUpdate').off('click').on('click', function () {
+                    var listProduct = $('.txtQuantity');
+                    var cartList = [];
+                    $.each(listProduct, function (i, item) {
+                        cartList.push({
+                            Quantity: $(item).val(),
+                            Product: {
+                                ID: $(item).data('id')
+                            }
+                        });
+                    });
+
+                    $.ajax({
+                        url: '/Cart/Update',
+                        data: { cartModel: JSON.stringify(cartList) },
+                        dataType: 'json',
+                        type: 'POST',
+                        success: function (res) {
+                            if (res.status == true) {
+                                window.location.href = "/gio-hang";
+                            }
+                        }
+                    })
+                });
+
+                $('#btnDeleteAll').off('click').on('click', function () {
+
+
+                    $.ajax({
+                        url: '/Cart/DeleteAll',
+                        dataType: 'json',
+                        type: 'POST',
+                        success: function (res) {
+                            if (res.status == true) {
+                                window.location.href = "/gio-hang";
+                            }
+                        }
+                    })
+                });
+
+                $('.btn-delete').off('click').on('click', function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        data: { id: $(this).data('id') },
+                        url: '/Cart/Delete',
+                        dataType: 'json',
+                        type: 'POST',
+                        success: function (res) {
+                            if (res.status == true) {
+                                window.location.href = "/gio-hang";
+                            }
+                        }
+                    })
+                });
+            }
+        }
+        cart.init();
+    </script>
+    <script src="~/Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

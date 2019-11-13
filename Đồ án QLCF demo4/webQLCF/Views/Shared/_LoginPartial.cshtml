@@ -1,0 +1,36 @@
+﻿
+@{
+    var session = (UserLogin)Session[webQLCF.Common.CommonConstants.USER_SESSION];
+}
+@if (session != null)
+{
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Xin chào <strong>@session.UserName</strong>!<span class="fa fa-angle-down"
+                                                                      aria-hidden="true"></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/gio-hang">Đơn mua</a>
+                    <a href="#">Tài khoản của tôi</a>
+                    <a href="#">Đăng xuất</a>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+}
+else
+{
+    <a class="nav-link dropdown-toggle" href="/dang-nhap" >
+        Đăng nhập
+        <!-- Counter - Alerts -->
+    </a>
+}
+
+
+

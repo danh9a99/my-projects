@@ -1,0 +1,66 @@
+<!-- specials -->
+	<section class="blog_w3ls py-5">
+		<div class="container pb-xl-5 pb-lg-3">
+			<div class="title-section text-center mb-md-5 mb-4">
+				<p class="w3ls-title-sub">Mộc Coffee</p>
+				<h3 class="w3ls-title">Our <span>Special</span></h3>
+			</div>
+			<div class="row">
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6">
+					<div class="card border-0 med-blog">
+						<div class="card-header p-0">
+							<a href="#">
+								<img class="card-img-bottom" src="images/caphedacbiet.jpg" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body border border-top-0">
+							<h5 class="blog-title card-title m-0"><a href="menu.html">Cà Phê Mộc</a></h5>
+							<p class="mt-3">Hãy thưởng thức cà phê của chúng tôi theo cách của bạn.</p>
+							<a href="menu.html" class="btn button-w3ls mt-4 mb-3">View More
+								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //blog grid -->
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+					<div class="card border-0 med-blog">
+						<div class="card-header p-0">
+							<a href="#">
+								<img class="card-img-bottom" src="images/tradao.png" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body border border-top-0">
+							<h5 class="blog-title card-title m-0"><a href="menu.html">Trà Đào</a></h5>
+							<p class="mt-3">Ngon không thể cưỡng lại với vị đào nguyên chất</p>
+							<a href="menu.html" class="button-w3ls active mt-4 mb-3">View More
+								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //blog grid -->
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+					<div class="card border-0 med-blog">
+						<div class="card-header p-0">
+							<a href="#">
+								<img class="card-img-bottom" src="images/caphesuasach.jpg" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body border border-top-0">
+							<h5 class="blog-title card-title m-0"><a href="menu.html">Cà phê sữa Mộc</a></h5>
+							<p class="mt-3">Hãy dùng tâm của bạn để thưởng thức nó</p>
+							<a href="menu.html" class="button-w3ls mt-4 mb-3">View More
+								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //blog grid -->
+			</div>
+		</div>
+	</section>
+	<!-- //specials -->

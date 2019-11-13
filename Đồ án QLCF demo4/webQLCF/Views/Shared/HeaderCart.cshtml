@@ -1,0 +1,69 @@
+﻿@model List<webQLCF.Models.CartItem>
+@{
+    var session = (UserLogin)Session[webQLCF.Common.CommonConstants.USER_SESSION];
+}
+@if (session != null)
+{
+    <li class="nav-item dropdown no-arrow mx-1">
+        <div class="dropdown">
+            <button class="dropdown">
+                Xin chào <strong>@session.UserName</strong>!<span class="fa fa-angle-down"
+                                                                  aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="/gio-hang">Đơn mua</a>
+                <a href="#">Tài khoản của tôi</a>
+                <a href="@Url.Action("Logout", "User")">Đăng xuất</a>
+            </div>
+        </div>
+
+    </li>
+    <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-envelope fa-fw"></i> Sản Phẩm
+            <!-- Counter - Messages -->
+            <span class="badge badge-danger badge-counter">@Model.Count</span>
+        </a>
+        @if (Model.Count == 0)
+        {
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                    Sản phẩm
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <span class="alert alert-danger">Chưa có sản phẩm nào trong giỏ hàng</span>
+                </a>
+            </div>
+        }
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">
+                Sản phẩm
+            </h6>
+            @foreach (var item in Model)
+            {
+
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                        <img class="rounded-circle" src="@item.Product.Image" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate">@item.Product.Name - @((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))đ</div>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+
+                </a>
+
+            }
+        </div>
+
+    </li>
+}
+else
+{
+    <a class="nav-link dropdown-toggle" href="/dang-nhap">
+        Đăng nhập
+        <!-- Counter - Alerts -->
+    </a>
+}
