@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbmsQLNS", "dbmsQLNS\dbmsQLNS.csproj", "{608A2121-DC25-4AE8-B7A9-F4EFFFAA443A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{608A2121-DC25-4AE8-B7A9-F4EFFFAA443A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{608A2121-DC25-4AE8-B7A9-F4EFFFAA443A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{608A2121-DC25-4AE8-B7A9-F4EFFFAA443A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{608A2121-DC25-4AE8-B7A9-F4EFFFAA443A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C37A4173-A4D1-4AF3-84E5-F6E755C45C99}
+	EndGlobalSection
+EndGlobal

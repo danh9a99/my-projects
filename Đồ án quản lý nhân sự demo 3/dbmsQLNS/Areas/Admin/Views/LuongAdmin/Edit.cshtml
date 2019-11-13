@@ -1,0 +1,129 @@
+﻿@model dbmsQLNS.Models.Luong
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="left-content">
+    <div class="mother-grid-inner">
+        <div class="container-fluid">
+            <div class="">
+                <div class="">
+                    <h1 class="page-header">
+                        Câp nhật lương nhân viên
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i> <a href="@Url.Action("index","HomeAdmin")">Trang chủ</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-money"></i> Cập nhật lương
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="btn btn-default">
+                @Html.ActionLink("<<Trở về", "Index")
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.MaNhanVien)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LuongToiThieu, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LuongToiThieu, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LuongToiThieu, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.HeSoLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.HeSoLuong, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.HeSoLuong, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BHXH, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.BHXH, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BHXH, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BHYT, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.BHYT, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BHYT, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BHTN, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.BHTN, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BHTN, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PhuCap, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PhuCap, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.PhuCap, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ThueThuNhap, "ThuThuNhap(%)", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ThueThuNhap, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ThueThuNhap, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Cập nhật" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            <div class="col-sm-4 w3-agileits-crd">
+
+                <div class="card card-contact-list">
+                    <div class="agileinfo-cdr">
+                        <div class="card-header">
+                            <h3>Thông tin</h3>
+                        </div>
+                        <div class="card-body p-b-20">
+                            <p>Hệ số phụ cấp theo chức vụ của họ (Nhân Viên: <a href="#" target="_blank">0</a> - Trưởng bộ môn:  <a href="#" target="_blank">0.25</a> - Phó Phòng:  <a href="#" target="_blank">0.35</a> - Trưởng Phòng:  <a href="#" target="_blank">0.45</a>) </p>
+                            <p>Để chỉnh sửa phụ cấp thì bạn phải cập nhật chức vụ <a href="~/Admin/UserAdmin" target="_blank"> tại đây</a></p>
+                            <p>BHXH: <a href="#" target="_blank"> 8% so với lương tối thiểu</a></p>
+                            <p>BHYT: <a href="#" target="_blank"> 1.5% so với lương tối thiểu</a></p>
+                            <p>BHTN: <a href="#" target="_blank"> 1% so với lương tối thiểu</a></p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="copyrights">
+        <p class="fa">Những chỉ số trên chỉ là chỉ số tự đặt, có thể không giống như thực tế</p>
+    </div>
+</div>
